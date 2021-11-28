@@ -1,0 +1,70 @@
+GET http://localhost:8800/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhbGEiLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNjM3NDg4NzgxfQ.ZSwsdLeLnBpIZ5Nc39Skyhuf9FhPKtohjIy9nmQZzng
+
+###
+POST http://localhost:8800/auth/signup
+Content-Type: application/json
+
+{
+    "user": {
+        "name":"Bala", 
+        "password":"password",
+        "mailId":"tss16@iitbbs.ac.in"
+    },
+    "isTeacher":true
+}
+
+###
+
+POST http://localhost:8800/auth/login
+Content-Type: application/json
+
+{
+    "user": {
+        "mailId":"tss16@iitbbs.ac.in",
+        "password":"password"
+    },
+    "isTeacher":true
+}
+
+###
+POST http://localhost:8800/subject/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmFsYSIsIm1haWxJZCI6InRzczE2QGlpdGJicy5hYy5pbiIsImlzVGVhY2hlciI6dHJ1ZSwiX2lkIjoiNjFhMjMzN2NlZGU3ZDA3NDlmNDg0MjU3IiwiaWF0IjoxNjM4MDQ4MjEyfQ.pLdgDQX7ytsB-KMgpik6tZxHSgDokMueNCgu5KPbxi0
+Content-Type: application/json
+
+{
+    "name":"maths",
+    "description":"A very interesting subject!"
+}
+
+###
+POST http://localhost:8800/subject/makeAnnouncement
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmFsYSIsIm1haWxJZCI6InRzczE2QGlpdGJicy5hYy5pbiIsImlzVGVhY2hlciI6dHJ1ZSwiX2lkIjoiNjFhMjMzN2NlZGU3ZDA3NDlmNDg0MjU3IiwiaWF0IjoxNjM4MDQ4MjEyfQ.pLdgDQX7ytsB-KMgpik6tZxHSgDokMueNCgu5KPbxi0
+Content-Type: application/json
+
+{
+    "announcement":"this is a sample announcement 2!",
+    "subjectId":"61a2a368bc6c5e2003c7bef7"
+}
+
+###
+GET http://localhost:8800/subject/details/61a2a368bc6c5e2003c7bef7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmFsYSIsIm1haWxJZCI6InRzczE2QGlpdGJicy5hYy5pbiIsImlzVGVhY2hlciI6dHJ1ZSwiX2lkIjoiNjFhMjMzN2NlZGU3ZDA3NDlmNDg0MjU3IiwiaWF0IjoxNjM4MDQ4MjEyfQ.pLdgDQX7ytsB-KMgpik6tZxHSgDokMueNCgu5KPbxi0
+
+###
+POST http://localhost:8800/subject/createMeeting
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmFsYSIsIm1haWxJZCI6InRzczE2QGlpdGJicy5hYy5pbiIsImlzVGVhY2hlciI6dHJ1ZSwiX2lkIjoiNjFhMjMzN2NlZGU3ZDA3NDlmNDg0MjU3IiwiaWF0IjoxNjM4MDQ4MjEyfQ.pLdgDQX7ytsB-KMgpik6tZxHSgDokMueNCgu5KPbxi0
+Content-Type: application/json
+
+{
+    "date":"today",
+    "from":"10:00am",
+    "to":"1pm",
+    "allowedCapacity":50,
+    "arePartiallyVaccinatedAllowed":true,
+    "subjectId":"61a2a368bc6c5e2003c7bef7"
+}
+
+###
+GET http://localhost:8800/subject/people/61a2a368bc6c5e2003c7bef7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmFsYSIsIm1haWxJZCI6InRzczE2QGlpdGJicy5hYy5pbiIsImlzVGVhY2hlciI6dHJ1ZSwiX2lkIjoiNjFhMjMzN2NlZGU3ZDA3NDlmNDg0MjU3IiwiaWF0IjoxNjM4MDQ4MjEyfQ.pLdgDQX7ytsB-KMgpik6tZxHSgDokMueNCgu5KPbxi0
