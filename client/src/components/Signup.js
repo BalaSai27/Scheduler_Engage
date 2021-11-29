@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Redirect, useHistory } from 'react-router';
 const inputStyles = { margin: "10px 20px"};
 
+// signup page where user will be able to signup into the application.
 const Signup = () => {
     const [user, setUser] = useState({
         firstName: "",

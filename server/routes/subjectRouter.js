@@ -35,6 +35,7 @@ router.post('/create', authenticateToken, async (req, res) => {
     
 });
 
+// getting the details of the subject with a given id
 router.get('/details/:id', authenticateToken, (req, res) => {
     const id=req.params.id;
     Subject.findOne({_id: id})
@@ -47,6 +48,7 @@ router.get('/details/:id', authenticateToken, (req, res) => {
         })
 });
 
+// used for making an announcement
 router.post('/makeAnnouncement', authenticateToken, (req, res) => {
     if(!req.user.isTeacher) return res.setStatus(401);
     const teacherId = req.user._id;
@@ -72,6 +74,7 @@ router.post('/makeAnnouncement', authenticateToken, (req, res) => {
     
 });
 
+// used for getting the announcements for a given subject id
 router.get('/announcements/:id', authenticateToken, (req, res) => {
     const id = req.params.id;
     Subject.findOne({_id: id})
@@ -84,7 +87,7 @@ router.get('/announcements/:id', authenticateToken, (req, res) => {
         })
 })
 
-
+// used for creating a meeting
 router.post('/createMeeting', authenticateToken, (req, res) => {
     if(!req.user.isTeacher) return res.sendStatus(401);
     const subjectId = req.body.subjectId;
@@ -118,7 +121,7 @@ router.post('/createMeeting', authenticateToken, (req, res) => {
         })
 
 });
-
+// used to get the people in a subject given its id
 router.get('/people/:id', authenticateToken, (req, res) => {
     const id = req.params.id;
     Subject.findOne({_id:id})

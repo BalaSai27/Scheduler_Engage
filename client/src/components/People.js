@@ -1,5 +1,6 @@
+import {useState} from 'react';
 
-
+// this component is used for showing the people enrolled in a particular subject
 const People = () => {
     const teacher = "Bala";
     const students = ["Bala", "Sai", "Srinivas"];

@@ -5,7 +5,7 @@ import NavbarAfterLogin from './components/NavbarAfterLogin';
 import CalendarComponent  from './components/CalendarComponent';
 import Home from './components/Home';
 
-
+// driver file for the js bundle.
 function App() {
   return (
     <Router>

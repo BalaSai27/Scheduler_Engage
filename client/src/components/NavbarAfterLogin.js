@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const cursorStyle = {cursor: "pointer"};
 
+// Navbar which appears as the user logs in
 const NavbarAfterLogin = ({ subjectSelected, changeTabNumber }) => {
 
     const [value, setValue] = useState(0);

@@ -3,6 +3,7 @@ const router = express.Router();
 const { authenticateToken } = require('../helpers');
 const Teacher = require('../models/teacher');
 
+// router used for getting the user routes
 router.get('/', (req, res) => {
     const isTeacher = req.user.isTeacher;
     const id = req.user._id;

@@ -7,6 +7,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import AddIcon from '@mui/icons-material/Add';
 import DatePicker from "react-datepicker";
 
+// calendar component where the teachers will be able to create meeting and students will be able to see the meetings and select the preferences
 const locales = {
     "en-IN": require("date-fns/locale/en-IN")
 }

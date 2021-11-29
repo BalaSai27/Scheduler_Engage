@@ -1,4 +1,5 @@
 
+// this page is responsible for showing the enrolled subjects to the user
 const Subjects = ({changeSubjectId}) => {
     const subjects = ["maths", "physics", "chemistry"];
     return (

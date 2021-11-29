@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Redirect } from 'react-router';
 
+// login page when the user sees if he/she wants to login to the website
 const Login = ({ updateUsername }) => {
     const [user, setUser] = useState({username: "", password: ""});
     const [isLoggedIn, setIsLoggedIn] = useState(false);

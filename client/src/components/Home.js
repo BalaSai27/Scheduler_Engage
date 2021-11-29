@@ -6,6 +6,7 @@ import Subjects from './Subjects';
 import { useEffect} from 'react';
 import axios from 'axios';
 
+// Home page of the application when the user logs in
 const Home = () => {
     const [subjectSelected, setSubjectSelected] = useState("");
     const [tabNumber, setTabNumber] = useState(1);
